@@ -11,6 +11,49 @@ In this lab, you will learn the following:
 * Implement different optimization techniques (loop unrolling, multithreading, and SIMD programming) for the linear kernel.
 * Observe the end-to-end latency improvement achieved by each technique.
 
+## Benchmark
+**MacBook Pro**
+
+- Arch ARM
+- CPU: Apple M1 Max
+- Mem: 32 GB
+
+```
+➭ ./evaluate.sh reference
+-------- Sanity check of reference implementation: Passed! -------- 
+Section, Total time(ms), Average time(ms), Count, GOPs
+reference, 2635.228027, 263.522003, 10, 0.994768
+
+
+➭ ./evaluate.sh loop_unrolling
+-------- Sanity check of loop_unrolling implementation: Passed! -------- 
+Section, Total time(ms), Average time(ms), Count, GOPs
+loop_unrolling, 1902.581055, 190.257996, 10, 1.377834
+
+
+➭ ./evaluate.sh multithreading
+-------- Sanity check of multithreading implementation: Passed! -------- 
+Section, Total time(ms), Average time(ms), Count, GOPs
+multithreading, 678.770996, 67.876999, 10, 3.862039
+
+
+➭ ./evaluate.sh simd_programming
+-------- Sanity check of simd_programming implementation: Passed! -------- 
+Section, Total time(ms), Average time(ms), Count, GOPs
+simd_programming, 1339.479004, 133.947006, 10, 1.957059
+
+
+➭ ./evaluate.sh multithreading_loop_unrolling
+-------- Sanity check of multithreading_loop_unrolling implementation: Passed! -------- 
+Section, Total time(ms), Average time(ms), Count, GOPs
+multithreading_loop_unrolling, 489.820007, 48.981998, 10, 5.351844
+
+
+➭ ./evaluate.sh all_techniques               
+-------- Sanity check of all_techniques implementation: Passed! -------- 
+Section, Total time(ms), Average time(ms), Count, GOPs
+all_techniques, 189.781006, 18.978001, 10, 13.812974
+```
 
 ## TinyChatEngine
 
@@ -42,3 +85,5 @@ Please check this document and follow the instructions which will walk you throu
 [llama.cpp](https://github.com/ggerganov/llama.cpp)
 
 [transformers](https://github.com/huggingface/transformers)
+
+Thanks code from [yifan_lu](https://github.com/yifanlu0227/LLaMA2-7B-on-laptop/tree/aaf7bf3e7f9667d4c6170b2c3ffff39b31c089e3)
