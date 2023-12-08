@@ -55,6 +55,14 @@ Section, Total time(ms), Average time(ms), Count, GOPs
 all_techniques, 189.781006, 18.978001, 10, 13.812974
 ```
 
+This one is the usage of the original one:
+
+![Alt text](original.png)
+
+This one is the usage of the optimized one:
+
+![Alt text](all_techniques.png)
+
 ## TinyChatEngine
 
 This tutorial is based on [TinyChatEngine](https://github.com/mit-han-lab/TinyChatEngine), a powerful neural network library specifically designed for the efficient deployment of quantized large language models (LLMs) on edge devices. 
